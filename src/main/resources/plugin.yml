@@ -1,0 +1,24 @@
+name: ServerMemory
+version: '${project.version}'
+main: com.hinaplugin.servermemory.servermemory.ServerMemory
+api-version: 1.19
+prefix: ServerMemory
+load: STARTUP
+authors: [ hina2113 ]
+description: サーバーのメモリ使用率に関する情報を運営に通達する．
+
+commands:
+  memory:
+    usage: /memory <subcommands>
+    description: "サーバーのメモリ使用量をチェックするコマンドです．"
+    permission: server.system.command
+
+permissions:
+  memory.admin:
+    children:
+      - server.system.command
+      - server.system.info
+    default: op
+
+  server.system.command: {}
+  server.system.info: {}
